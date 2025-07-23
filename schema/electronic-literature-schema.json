@@ -1,0 +1,721 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/wikidata-electronic-literature.json",
+  "title": "Wikidata Electronic Literature Entry",
+  "description": "JSON schema for Wikidata entries representing electronic literature works, based on the CELL WikiProject data model",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^Q[0-9]+$",
+      "description": "Wikidata entity identifier (Q-number)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["item"],
+      "description": "Type of Wikidata entity"
+    },
+    "labels": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]{2,3}(-[A-Z]{2})?$": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": ["language", "value"]
+        }
+      },
+      "description": "Labels in different languages"
+    },
+    "descriptions": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]{2,3}(-[A-Z]{2})?$": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": ["language", "value"]
+        }
+      },
+      "description": "Descriptions in different languages"
+    },
+    "aliases": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]{2,3}(-[A-Z]{2})?$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": ["language", "value"]
+          }
+        }
+      },
+      "description": "Alternative names in different languages"
+    },
+    "claims": {
+      "type": "object",
+      "properties": {
+        "P31": {
+          "description": "instance of - Type of the record",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P12204": {
+          "description": "ELMCIP ID - Electronic Literature as a Model of Creativity and Innovation in Practice identifier",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P136": {
+          "description": "genre - Genre of the electronic literature work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P50": {
+          "description": "author - Author(s) of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1433": {
+          "description": "published in - Publication venue",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P166": {
+          "description": "award received - Awards received by the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P275": {
+          "description": "copyright license - License under which the work is released",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P407": {
+          "description": "language of work or name - Language(s) of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P495": {
+          "description": "country of origin - Country where the work was created",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P747": {
+          "description": "has edition or translation - Editions or translations of this work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P7937": {
+          "description": "form of creative work - Form or medium of the creative work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P179": {
+          "description": "part of the series - Series this work belongs to",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P629": {
+          "description": "edition or translation of - Original work this is an edition/translation of",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P655": {
+          "description": "translator - Translator(s) of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P767": {
+          "description": "contributor to the creative work or subject - Contributors to the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P580": {
+          "description": "start time - Start time of creation or publication",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P582": {
+          "description": "end time - End time of creation or publication",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P212": {
+          "description": "ISBN-13 - 13-digit ISBN",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P953": {
+          "description": "work available at URL - URL where the work can be accessed",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P400": {
+          "description": "platform - Computing platform(s) the work runs on",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1552": {
+          "description": "has characteristic - Characteristics of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P921": {
+          "description": "main subject - Main subject matter of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P5072": {
+          "description": "presented in - Event or venue where the work was presented",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P571": {
+          "description": "inception - Date when the work was created",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P577": {
+          "description": "publication date - Date when the work was published",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P856": {
+          "description": "official website - Official website of the work",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P123": {
+          "description": "publisher - Publisher of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P2699": {
+          "description": "URL - General URL related to the work",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P4945": {
+          "description": "download URL - URL where the work can be downloaded",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P1065": {
+          "description": "archive URL - Archived version URL",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P10832": {
+          "description": "WorldCat Entities ID - WorldCat identifier",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P356": {
+          "description": "DOI - Digital Object Identifier",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P957": {
+          "description": "ISBN-10 - 10-digit ISBN",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P361": {
+          "description": "part of - Larger work this is part of",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P7081": {
+          "description": "quotation or excerpt - Notable quotations from the work",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P11265": {
+          "description": "alt text - Alternative text description",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P1476": {
+          "description": "title - Official title of the work",
+          "$ref": "#/$defs/monolingualTextClaim"
+        },
+        "P236": {
+          "description": "ISSN - International Standard Serial Number",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P478": {
+          "description": "volume - Volume number",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P433": {
+          "description": "issue - Issue number",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P304": {
+          "description": "page(s) - Page numbers",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P1104": {
+          "description": "number of pages - Total number of pages",
+          "$ref": "#/$defs/quantityClaim"
+        },
+        "P8371": {
+          "description": "references work, tradition or theory - Referenced works or theories",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P178": {
+          "description": "developer - Software developer(s)",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P973": {
+          "description": "described at URL - URL with description of the work",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P1324": {
+          "description": "source code repository URL - Repository containing source code",
+          "$ref": "#/$defs/urlClaim"
+        },
+        "P18": {
+          "description": "image - Representative image",
+          "$ref": "#/$defs/commonsMediaClaim"
+        },
+        "P10": {
+          "description": "video - Representative video",
+          "$ref": "#/$defs/commonsMediaClaim"
+        },
+        "P996": {
+          "description": "document file on Wikimedia Commons - Document file",
+          "$ref": "#/$defs/commonsMediaClaim"
+        },
+        "P276": {
+          "description": "location - Geographic location",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P131": {
+          "description": "located in the administrative territorial entity - Administrative location",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P281": {
+          "description": "postal code - Postal code",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P17": {
+          "description": "country - Country",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P625": {
+          "description": "coordinate location - Geographic coordinates",
+          "$ref": "#/$defs/coordinateClaim"
+        },
+        "P98": {
+          "description": "editor - Editor(s) of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P968": {
+          "description": "email address - Contact email",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P6375": {
+          "description": "street address - Street address",
+          "$ref": "#/$defs/monolingualTextClaim"
+        },
+        "P585": {
+          "description": "point in time - Specific point in time",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P664": {
+          "description": "organizer - Organizer of event/exhibition",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1640": {
+          "description": "curator - Curator of exhibition/collection",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1416": {
+          "description": "affiliation - Institutional affiliation",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P3342": {
+          "description": "significant person - Significant person related to the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P437": {
+          "description": "distribution format - Format for distribution",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P12548": {
+          "description": "media modality - Media modality (visual, audio, haptic, etc.)",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P479": {
+          "description": "input device - Required input device(s)",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P408": {
+          "description": "software engine - Software engine used",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P186": {
+          "description": "made from material - Materials used in creation",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P306": {
+          "description": "operating system - Required operating system",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P2701": {
+          "description": "file format - File format(s) of the work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P5196": {
+          "description": "output device - Required output device(s)",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P2283": {
+          "description": "uses - Technologies or methods used",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P277": {
+          "description": "programmed in - Programming language(s) used",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P2002": {
+          "description": "X (Twitter) username - Twitter/X username",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P279": {
+          "description": "subclass of - Parent class",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1960": {
+          "description": "Google Scholar author ID - Google Scholar identifier",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P243": {
+          "description": "OCLC number - OCLC control number",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P27": {
+          "description": "country of citizenship - Citizenship of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P569": {
+          "description": "date of birth - Birth date of person",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P570": {
+          "description": "date of death - Death date of person",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P496": {
+          "description": "ORCID iD - ORCID identifier for researcher",
+          "$ref": "#/$defs/stringClaim"
+        }
+      }
+    },
+    "sitelinks": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]+wiki$": {
+          "type": "object",
+          "properties": {
+            "site": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "badges": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$"
+              }
+            }
+          },
+          "required": ["site", "title"]
+        }
+      },
+      "description": "Links to Wikipedia and other Wikimedia projects"
+    }
+  },
+  "required": ["id", "type"],
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "properties": {
+        "mainsnak": {
+          "$ref": "#/$defs/snak"
+        },
+        "qualifiers": {
+          "type": "object",
+          "patternProperties": {
+            "^P[0-9]+$": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/snak"
+              }
+            }
+          }
+        },
+        "qualifiers-order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^P[0-9]+$"
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "rank": {
+          "type": "string",
+          "enum": ["preferred", "normal", "deprecated"]
+        }
+      },
+      "required": ["mainsnak"]
+    },
+    "snak": {
+      "type": "object",
+      "properties": {
+        "snaktype": {
+          "type": "string",
+          "enum": ["value", "novalue", "somevalue"]
+        },
+        "property": {
+          "type": "string",
+          "pattern": "^P[0-9]+$"
+        },
+        "datavalue": {
+          "type": "object"
+        }
+      },
+      "required": ["snaktype", "property"]
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "hash": {
+          "type": "string"
+        },
+        "snaks": {
+          "type": "object",
+          "patternProperties": {
+            "^P[0-9]+$": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/snak"
+              }
+            }
+          }
+        },
+        "snaks-order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^P[0-9]+$"
+          }
+        }
+      }
+    },
+    "entityClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "wikibase-entityid"},
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "entity-type": {"type": "string"},
+                          "id": {"type": "string", "pattern": "^Q[0-9]+$"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "stringClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "string"},
+                      "value": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "urlClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "string"},
+                      "value": {"type": "string", "format": "uri"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "timeClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "time"},
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "time": {"type": "string"},
+                          "timezone": {"type": "integer"},
+                          "before": {"type": "integer"},
+                          "after": {"type": "integer"},
+                          "precision": {"type": "integer"},
+                          "calendarmodel": {"type": "string"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "quantityClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "quantity"},
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {"type": "string"},
+                          "unit": {"type": "string"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "coordinateClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "globecoordinate"},
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "latitude": {"type": "number"},
+                          "longitude": {"type": "number"},
+                          "precision": {"type": "number"},
+                          "globe": {"type": "string"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "monolingualTextClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "monolingualtext"},
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "text": {"type": "string"},
+                          "language": {"type": "string"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "commonsMediaClaim": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/claim"},
+          {
+            "properties": {
+              "mainsnak": {
+                "properties": {
+                  "datavalue": {
+                    "properties": {
+                      "type": {"const": "string"},
+                      "value": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

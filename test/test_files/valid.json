@@ -1,0 +1,251 @@
+{
+  "id": "Q123456",
+  "type": "item",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Interactive Fiction Example"
+    },
+    "es": {
+      "language": "es", 
+      "value": "Ejemplo de Ficción Interactiva"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "An example electronic literature work featuring interactive storytelling"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "IF Example"
+      },
+      {
+        "language": "en",
+        "value": "Interactive Story"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q5359956"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P1476": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1476",
+          "datavalue": {
+            "type": "monolingualtext",
+            "value": {
+              "text": "Interactive Fiction Example",
+              "language": "en"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P50": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P50",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q789012"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P136": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P136",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q193606"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P407": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P407",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q1860"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "datavalue": {
+            "type": "time",
+            "value": {
+              "time": "+2023-01-15T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P577": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P577",
+          "datavalue": {
+            "type": "time",
+            "value": {
+              "time": "+2023-03-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P953": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P953",
+          "datavalue": {
+            "type": "string",
+            "value": "https://example.com/interactive-fiction"
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P400": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P400",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q180634"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P277": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P277",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q2005"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P12548": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12548",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q24925"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P275": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P275",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q18199165"
+            }
+          }
+        },
+        "rank": "normal"
+      }
+    ],
+    "P12204": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12204",
+          "datavalue": {
+            "type": "string",
+            "value": "12345"
+          }
+        },
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Interactive Fiction Example",
+      "badges": []
+    }
+  }
+}
