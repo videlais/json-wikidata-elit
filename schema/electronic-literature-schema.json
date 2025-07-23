@@ -394,6 +394,182 @@
         "P496": {
           "description": "ORCID iD - ORCID identifier for researcher",
           "$ref": "#/$defs/stringClaim"
+        },
+        "P2860": {
+          "description": "cites work - Citation to another work",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P9767": {
+          "description": "edition/version - Official edition or version name",
+          "$ref": "#/$defs/monolingualTextClaim"
+        },
+        "P21": {
+          "description": "sex or gender - Sex or gender identity",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P735": {
+          "description": "given name - Given name of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P734": {
+          "description": "family name - Family name of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1559": {
+          "description": "name in native language - Name in person's native language",
+          "$ref": "#/$defs/monolingualTextClaim"
+        },
+        "P800": {
+          "description": "notable work - Notable work by this person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1343": {
+          "description": "described by source - Source that describes this item",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P669": {
+          "description": "located on street - Street where subject is located",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P670": {
+          "description": "house number - House number for address",
+          "$ref": "#/$defs/stringClaim"
+        },
+        "P1619": {
+          "description": "date of official opening - Date of official opening",
+          "$ref": "#/$defs/timeClaim"
+        },
+        "P103": {
+          "description": "native language - Native language of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1412": {
+          "description": "languages spoken, written or signed - Languages used by person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P119": {
+          "description": "place of burial - Location where person is buried",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P937": {
+          "description": "work location - Place where person works",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P106": {
+          "description": "occupation - Occupation of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P108": {
+          "description": "employer - Employer of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P69": {
+          "description": "educated at - Educational institution attended",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P512": {
+          "description": "academic degree - Academic degree received",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P185": {
+          "description": "doctoral thesis - Doctoral thesis written",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P184": {
+          "description": "doctoral advisor - Doctoral advisor of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P802": {
+          "description": "student - Student of this person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P463": {
+          "description": "member of - Organization of which person is member",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P39": {
+          "description": "position held - Position held by person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1303": {
+          "description": "instrument - Musical instrument played",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P2048": {
+          "description": "height - Height measurement",
+          "$ref": "#/$defs/quantityClaim"
+        },
+        "P2067": {
+          "description": "mass - Mass measurement",
+          "$ref": "#/$defs/quantityClaim"
+        },
+        "P527": {
+          "description": "has part(s) - Parts that make up this entity",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P3373": {
+          "description": "sibling - Sibling of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P22": {
+          "description": "father - Father of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P25": {
+          "description": "mother - Mother of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P40": {
+          "description": "child - Child of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P26": {
+          "description": "spouse - Spouse of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P451": {
+          "description": "unmarried partner - Unmarried partner of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1038": {
+          "description": "relative - Relative of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P551": {
+          "description": "residence - Place of residence",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P20": {
+          "description": "place of death - Location where person died",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P19": {
+          "description": "place of birth - Location where person was born",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P140": {
+          "description": "religion or worldview - Religion or worldview",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P102": {
+          "description": "member of political party - Political party membership",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P1290": {
+          "description": "godparent - Godparent of person",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P6886": {
+          "description": "writing language - Language used for writing",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P195": {
+          "description": "collection - Collection of which the item is part",
+          "$ref": "#/$defs/entityClaim"
+        },
+        "P3919": {
+          "description": "contributed to creative work - Work to which person contributed",
+          "$ref": "#/$defs/entityClaim"
         }
       }
     },
